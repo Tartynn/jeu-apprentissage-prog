@@ -1,0 +1,53 @@
+/* The sidebar menu */
+.sidenav {
+    height: 100%; 
+    width: 15%; 
+    position: fixed; 
+    z-index: 1; 
+    top: 0; 
+    left: 0;
+    background-color: #282a36;
+    overflow-x: hidden;
+  }
+
+  img {
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 5%;
+  }
+
+  p {
+    padding-left: 10px;
+    margin-bottom: 3px;
+    font-weight: 600;
+    font-size: 20px;
+    color: #818181;
+  }
+  
+  .sidenav a {
+    text-decoration: none;
+    font-size: 18px;
+    color: #818181;
+    display: block;
+  }
+  .sidenav .smallLink {
+    padding: 3px 8px 3px 16px;
+    
+  }
+  
+  .sidenav a:hover {
+    color: #f1f1f1;
+  }
+ 
+  @media screen and  (max-width:650px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav .smallLink {font-size: 13px;}
+    .sidenav p{font-size: 15px;}
+    .sidenav a{font-size: 15px;}
+  }
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav .smallLink {font-size: 13px;}
+    .sidenav a{font-size: 15px;}
+    .sidenav a{font-size: 15px;}
+  }
