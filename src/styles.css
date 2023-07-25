@@ -1,1 +1,54 @@
 /* You can add global styles to this file, and also import other style files */
+/* to mix with sidebar */
+.main {
+  margin-left: 15%; 
+  padding: 0px 0px;
+}
+/*console error*/
+.error {
+  color: red;
+  font-weight: bold;
+}
+
+/*code level css*/
+.container{
+  width:90%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2%;
+}
+
+.centering{
+  margin-top: 3%;
+  margin-left: 5%;
+  margin-right: 5%;
+
+}
+
+#incorrectInput{
+  color: red;
+  font-weight: bold;
+}
+
+.label{
+  margin-bottom: 3%;
+  margin-left: 5%;
+  margin-right: 5%;
+  text-align: justify;
+}
+
+body{
+    margin: 0 0 0 0;
+}
+button {
+    border-radius: 6px;
+    padding: 5px;
+    font-size: 15px;
+}
+.link {
+  color:#5200ee;
+}
+
+#levelTitle{
+  margin-left: 5%;
+}

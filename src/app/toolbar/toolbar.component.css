@@ -3,6 +3,9 @@
     flex: 1;
   }
 
+  span{
+    margin-left: 5%;
+  }
   .toolbar {
     position: relative;
     margin-top: 0;
@@ -10,7 +13,7 @@
     height: 8%;
     display: flex;
     align-items: center;
-    background-color: #1976d2;
+    background-color: #0274b6;
     color: white;
     font-weight: 600;
   }
@@ -18,19 +21,13 @@
   .toolbar img {
     margin: 0 16px;
   }
-
-  .toolbar #twitter-logo {
-    height: 40px;
-    margin: 0 8px;
-  }
-
-  .toolbar #youtube-logo {
-    height: 40px;
-    margin: 0 16px;
+  .toolbar #disconnect {
+    height: 35px;
+    margin: 2px 30px;
   }
 
   .toolbar #twitter-logo:hover,
-  .toolbar #youtube-logo:hover {
+  .toolbar #disconnect:hover {
     opacity: 0.8;
   }
 

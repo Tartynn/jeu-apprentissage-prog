@@ -4,26 +4,29 @@
         <h2>Créer un compte</h2>
         <form>
             <div>
-                <p><input class="forminput" type="text" name="mail" required placeholder="Email"></p>
+                <p><input class="forminput" type="text" #mail required placeholder="Email"></p> 
+                
             </div>
             
             <div>
-                <p><input class="forminput" type="password" name="pass" required placeholder="Mot de passe"></p>
+                <p><input class="forminput" type="password" #pass required placeholder="Mot de passe"></p>
             </div>
             <div>
-                <p><input class="forminput" type="password" name="confPass" required placeholder="Confirmez le mot de passe"></p>
+                <p><input class="forminput" type="password" #confPass required placeholder="Confirmez le mot de passe"></p>
+                
+            </div>
+
+            <div>
+                <p><input class="forminput" type="text" #lastname required placeholder="Nom"></p>
             </div>
             <div>
-                <p><input class="forminput" type="text" name="nom" required placeholder="Nom"></p>
+                <p><input class="forminput" type="text" #firstname required placeholder="Prénom"></p>
             </div>
-            <div>
-                <p><input class="forminput" type="text" name="pren" required placeholder="Prénom"></p>
-            </div>
-            
+            <p><label #message id="incorrectInput"> </label></p>
         </form>
         <div id="container">
             <button id="cancel" (click)="navigate('/login')">Annuler</button>
-            <button id="signup" (click)="navigate('')">S'inscrire</button>
+            <button id="signup" (click)="handleRegister($event, mail.value, pass.value, confPass.value, firstname.value, lastname.value)">S'inscrire</button>
         </div>
     </div>
 </div>

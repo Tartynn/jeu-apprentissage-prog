@@ -26,8 +26,6 @@ export class JavaIDEComponent implements AfterViewInit {
     ace.config.set('basePath', 'https://unpkg.com/ace-builds@1.4.12/src-noconflict');
 
     const aceEditor = ace.edit(this.editor.nativeElement);
-    aceEditor.session.setValue('public class Tricount {\n    public static void main(String[] args) {\n        System.out.println("Hello, World!");\n    }\n}');
-
     aceEditor.setTheme('ace/theme/dracula');
     aceEditor.session.setMode('ace/mode/java');
     aceEditor.on("change", () => {

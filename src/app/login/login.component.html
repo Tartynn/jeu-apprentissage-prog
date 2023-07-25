@@ -16,15 +16,15 @@
         </p>
         <form>
             <div>
-                <input class="forminput" type="text" id="mail" name="mail" required placeholder="Email">
+                <input class="forminput" type="text" #mail required placeholder="Email">
             </div>
             
             <div>
-                <p><input class="forminput" type="password" id="password" name="passw" required placeholder="Mot de passe"></p>
+                <p><input class="forminput" type="password" #pass name="passw" required placeholder="Mot de passe"></p>
             </div>
-            
+            <p><label #message id="incorrectInput"> </label></p>            
         </form>
-        <button (click)="navigate('')">Se connecter</button>
+        <button (click)="login(mail.value, pass.value)">Se connecter</button>
         <p>Besoin d'un compte ? <a class="link" href="/signup">S'inscrire</a></p>
     </div>
 </div>

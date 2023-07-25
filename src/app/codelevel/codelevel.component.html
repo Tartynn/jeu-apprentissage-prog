@@ -1,16 +1,19 @@
-<app-sidebar></app-sidebar>
-  <div class="main">
-    <app-toolbar></app-toolbar>
+
   <div align="center">
+    <div class="label">
+      <label #donnee></label>
+    </div>
     <app-java-ide></app-java-ide>
     <div class="container">
-      <button (click)="onButtonExecute()">Réinitialiser</button>
+      <button (click)="reset()">Réinitialiser</button>
+      <button (click)="saveCode()">Sauvegarder</button>
       <button (click)="onButtonExecute()">Exécuter</button>
+      <button (click)="sendCode()">Envoyer</button>
+
     </div>
 
   </div>
-  <div class="console">
+  <div class="centering">
     <label>Console</label>
     <app-console></app-console>
   </div>
-</div>

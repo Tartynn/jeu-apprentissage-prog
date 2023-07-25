@@ -7,9 +7,10 @@ import { Component, ViewChild, ElementRef } from '@angular/core';
 
 export class Console {
   @ViewChild('consoleLabel', { static: false }) consoleLabel!: ElementRef;
-
-  onExecution(consoleText:string) {
+  containsError: boolean = false;
+  onExecution(consoleText:string, error:boolean) {
     const labelElement: HTMLLabelElement = this.consoleLabel.nativeElement;
-    labelElement.textContent = consoleText;
+    labelElement.innerHTML = consoleText;
+    this.containsError = error;
   }
 }
