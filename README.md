@@ -1,27 +1,21 @@
 # TbJeuProg
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.0.
+Ce projet a été généré avec Angular CLI version 16.1.0.
 
-## Development server
+## Serveur de développement
+Exécutez ng serve pour démarrer un serveur de développement. Accédez à http://localhost:4200/ dans votre navigateur. L'application se rechargera automatiquement si vous modifiez l'un des fichiers sources.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+##Structure du code
+Utilisez ng generate component nom-composant pour générer un nouveau composant. Vous pouvez également utiliser ng generate directive|pipe|service|class|guard|interface|enum|module.
 
-## Code scaffolding
+##Construction du projet
+Exécutez ng build pour construire le projet. Les fichiers de construction seront stockés dans le répertoire dist/.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+##Exécution des tests unitaires
+Exécutez ng test pour exécuter les tests unitaires via Karma.
 
-## Build
+##Exécution des tests end-to-end
+Exécutez ng e2e pour exécuter les tests end-to-end via une plateforme de votre choix. Pour utiliser cette commande, vous devez d'abord ajouter un package qui implémente les capacités de tests end-to-end.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+##Besoin d'aide supplémentaire
+Pour obtenir plus d'aide sur Angular CLI, utilisez ng help ou consultez la page Vue d'ensemble et référence des commandes Angular CLI.
