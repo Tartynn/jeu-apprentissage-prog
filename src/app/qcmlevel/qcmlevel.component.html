@@ -3,14 +3,14 @@
       <label #donnee></label>
     </div>
     <form>
-        <input type="radio" id="first" name="fav_language" value="HTML">
-        <label for="first">a</label><br>
-        <input type="radio" id="second" name="fav_language" value="UwU">
-        <label for="second">HTML</label><br>
-        <input type="radio" id="third" name="fav_language" value="HTL">
-        <label for="third">HTML</label><br>
-        <input type="radio" id="fourth" name="fav_language" value="HML">
-        <label for="fourth">HTML</label><br>
+        <input type="radio" id="1" name="response" [(ngModel)]="response" value="{{ elements[0]}}">
+        <label for="1">{{ elements[0]}}</label><br>
+        <input type="radio" id="2" name="response" [(ngModel)]="response" value="{{ elements[1]}}">
+        <label for="2">{{ elements[1]}}</label><br>
+        <input type="radio" id="3" name="response" [(ngModel)]="response" value="{{ elements[2]}}">
+        <label for="3">{{ elements[2]}}</label><br>
+        <input type="radio" id="4" name="response" [(ngModel)]="response" value="{{ elements[3]}}">
+        <label for="4">{{ elements[3]}}</label><br>
     </form>
     <p><button (click)="send()">Envoyer</button></p>
 </div>

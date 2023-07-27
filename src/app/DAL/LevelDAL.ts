@@ -1,7 +1,18 @@
-import { inject } from "@angular/core";
-import { Firestore, doc, getDoc, getFirestore } from "@angular/fire/firestore";
-import { getAuth } from "firebase/auth";
+import { Firestore, collection, doc, getDoc, getDocs, getFirestore, query, where } from "@angular/fire/firestore";
 
-class LevelDAL {
-    
+
+export class LevelDAL {
+    constructor(){}
+    async getLevelById(levelID:string){
+        const db = getFirestore();
+        const levelRef = collection(db, "niveaux");
+        const levelQuery = query(levelRef, where("niveauID", "==", levelID));
+        const snapshot = await getDocs(levelQuery);
+        let level;
+        if (!snapshot.empty) {
+            level = snapshot.docs[0].data();
+        }
+        console.log(level);
+        return level;
+    }
 }

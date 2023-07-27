@@ -1,8 +1,6 @@
 import { Component, ElementRef, ViewChild, inject } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Firestore, collection } from '@angular/fire/firestore';
-import { UserDAL } from '../DAL/UserDAL';
-import { UserService } from '../user.service';
 import { LocalService } from '../local.service';
 import { navigate } from '../app.component';
 import { Router } from '@angular/router';
@@ -21,6 +19,8 @@ export class HomePageComponent {
   constructor(public af: AngularFireAuth,private router: Router ,private ls: LocalService) {
     const u :string = this.ls.getData('user') as string;
     this.user = JSON.parse(u);
+    if(!this.user)
+      navigate(this.router,'login');
   } 
 
   navigate(url:string){

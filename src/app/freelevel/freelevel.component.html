@@ -1,1 +1,7 @@
-<p>freelevel works!</p>
+<div align="center">
+    <div class="label">
+      <label #donnee></label>
+    </div>
+    <textarea title="answer" #textArea id="textArea" name="textArea" rows="10" cols="70"></textarea>
+    <p><button (click)="send(textArea.value)">Envoyer</button></p>
+</div>

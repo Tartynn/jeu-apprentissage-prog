@@ -1,10 +1,5 @@
-// mycomponent.component.ts
-
 import { Component, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import * as ace from 'ace-builds';
-
-// The `ace` object doesn't expose Ace's types, so use `Ace` from `ace-builds`.
-import {Ace} from 'ace-builds';
 
 @Component({
   selector: 'app-java-ide',
@@ -28,8 +23,6 @@ export class JavaIDEComponent implements AfterViewInit {
     const aceEditor = ace.edit(this.editor.nativeElement);
     aceEditor.setTheme('ace/theme/dracula');
     aceEditor.session.setMode('ace/mode/java');
-    aceEditor.on("change", () => {
-      //console.log(aceEditor.getValue());
-    });
   }
 }
+

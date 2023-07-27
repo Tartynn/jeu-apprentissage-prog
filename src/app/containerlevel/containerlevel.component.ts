@@ -36,9 +36,11 @@ export class ContainerlevelComponent {
     this.uid = ls.getData('uid');
     const usObject : string = this.ls.getData('user') as string;
     this.user = JSON.parse(usObject);
+    if(!this.user)
+      navigate(this.router,'login');
     if(this.id>this.user.niveauActuel){
-      navigate(this.router,"/blocked");
-    }
+      navigate(this.router,"blocked");
+    } 
   }
 
   ngAfterViewInit(): void{

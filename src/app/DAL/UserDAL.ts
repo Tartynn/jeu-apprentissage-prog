@@ -1,9 +1,10 @@
 import { inject } from "@angular/core";
 import { Firestore, collection, doc, getDoc, getFirestore, setDoc, updateDoc } from "@angular/fire/firestore";
+import { User } from "../models/user";
 
 export class UserDAL {
     constructor(){}
-    async addUser(uid:any, user:any){
+    async addUser(uid:any, user: User){
         const db = getFirestore();
         const users = collection(db,"Utilisateurs");
         await setDoc(doc(users, uid), user);
@@ -12,7 +13,7 @@ export class UserDAL {
     async getUserById(uid:any){
         const db = getFirestore();
         const user = await getDoc(doc(db, "Utilisateurs",uid));
-        return user.data();
+        return user.data() as User;
     }
 
     async updateUserCode(uid:any, codeArray:any){
@@ -21,3 +22,4 @@ export class UserDAL {
         await updateDoc(user, {niveaux: codeArray});
     }
 }
+

@@ -15,7 +15,6 @@ import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
-import { EvaluationComponent } from './evaluation/evaluation.component';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
@@ -24,6 +23,7 @@ import { AdminComponent } from './admin/admin.component';
 import { QcmlevelComponent } from './qcmlevel/qcmlevel.component';
 import { FreelevelComponent } from './freelevel/freelevel.component';
 import { ContainerlevelComponent } from './containerlevel/containerlevel.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -35,12 +35,11 @@ import { ContainerlevelComponent } from './containerlevel/containerlevel.compone
     LoginComponent,
     SidebarComponent,
     ToolbarComponent,
-    EvaluationComponent,
     BlockedlevelComponent,
     AdminComponent,
     QcmlevelComponent,
     FreelevelComponent,
-    ContainerlevelComponent
+    ContainerlevelComponent,
   ],
   imports: [
     BrowserModule,
@@ -49,7 +48,8 @@ import { ContainerlevelComponent } from './containerlevel/containerlevel.compone
     AngularFireModule.initializeApp(environment.firebase),
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore()),
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

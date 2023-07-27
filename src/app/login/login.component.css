@@ -9,6 +9,13 @@ p {
     margin-right: 25%;
 }
 
+#intro{
+    text-align: justify;
+    line-height: 150%;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
 #cancel{
     margin-left: -40%;
 }

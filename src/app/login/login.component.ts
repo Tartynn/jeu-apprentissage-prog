@@ -7,6 +7,7 @@ import 'firebase/compat/firestore';
 import { navigate } from '../app.component';
 import { LocalService } from '../local.service';
 import { UserDAL } from '../DAL/UserDAL';
+import { User } from '../models/user';
 
 @Component({
   selector: 'app-login',
@@ -26,9 +27,10 @@ export class LoginComponent {
       await this.af.setPersistence(firebase.auth.Auth.Persistence.LOCAL);
       await this.af.signInWithEmailAndPassword(mail, pass);
       this.af.authState.subscribe(async user => {
-        const u: any = await UserDAL.prototype.getUserById(user?.uid);  
+        const u: User = await UserDAL.prototype.getUserById(user?.uid);  
         this.localStore.saveData('user',JSON.stringify(u));
         const uid : string= user?.uid as string;
+        console.log(user?.uid);
         this.localStore.saveData('uid',uid);
         if(u.admin){
           this.router.navigate(["admin"]);

@@ -5,6 +5,7 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { UserDAL } from '../DAL/UserDAL';
 import { navigate } from '../app.component';
 import { LocalService } from '../local.service';
+import { User } from '../models/user';
 
 
 @Component({
@@ -30,12 +31,21 @@ export class SignupComponent {
     if (!this.validateEmail(email) || !this.validatePassword(password,confirmP) || !this.namesController(firstname, lastname))
       return;
     try{
-      let user = {"prenom": firstname, "nom":lastname, "email":email, "niveauActuel":1,"niveaux":["","","","","","","","","",""], "niveauxReussis":[-1,-1,-1,-1,-1,-1,-1,-1,-1,-1], "essais":[3,3,3,3,3,3,3,3,3,3], admin:false}
+      let user : User = {
+        "prenom": firstname, 
+        "nom":lastname, 
+        "email":email, 
+        "niveauActuel":1,
+        "niveaux":["","","","","","","","","",""], 
+        "niveauxReussis":[-1,-1,-1,-1,-1,-1,-1,-1,-1,-1], 
+        "essais":[3,3,3,3,3,3,3,3,3,3], 
+        "admin" :false
+    }
       const userCredential = await this.af.createUserWithEmailAndPassword(email, password);
       UserDAL.prototype.addUser(userCredential.user?.uid,user);
       navigate(this.router,"/login");
     } catch(e) {
-      console.error(e)
+      this.message.nativeElement.textContent="Cette adresse mail est déjà utilisée."
     }
     
   }

@@ -26,15 +26,13 @@ export class CodelevelComponent implements AfterViewInit{
   @ViewChild(Console, { static: false }) cons!: Console;
   @ViewChild('donnee', { static: false }) donnee!: ElementRef;
   firestore: Firestore = inject(Firestore);
-  level$: Observable<Level[]>;
   id: number = 0;
   user!: User;
   uid: any;
   lvl!: Level;
   constructor(private ls: LocalService ,private route: ActivatedRoute,private router: Router, private http: HttpClient) {
     this.router.routeReuseStrategy.shouldReuseRoute = () => false;
-    const levels = collection(this.firestore, 'Niveaux');
-    this.level$ = collectionData(levels) as Observable<Level[]>;
+
     this.route.params.subscribe(params => {
       this.id = +params['id'].replaceAll(':','');
     });
@@ -72,10 +70,6 @@ export class CodelevelComponent implements AfterViewInit{
     }
   }
 
-  async sendCode(){
-
-  }
-
   async executeCode(content: string) {
     const url = 'http://localhost:3000/api/run/java/latest';
     const body = { files: [{ name: 'Tricount.java', content: content }] };
@@ -89,7 +83,10 @@ export class CodelevelComponent implements AfterViewInit{
       this.javaIDE.setEditorContent(this.lvl.codeDepart[0].replaceAll('\\n','\n'));
     } 
   }
-  
+  async sendCode(){
+
+  }
+
   async saveCode() {
     const code = this.javaIDE.getEditorContent();
     this.save(code);
