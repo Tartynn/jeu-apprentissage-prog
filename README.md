@@ -1,6 +1,6 @@
 # TbJeuProg
 
-Ce projet a été généré avec Angular CLI version 16.1.0.
+Ce projet a été généré avec Angular CLI version 16.1.0 dans le cadre d'un travail de bachelor pour la Haute École de Gestion & Tourisme de Sierre.
 
 ## Serveur de développement
 Exécutez ng serve pour démarrer un serveur de développement. Accédez à http://localhost:4200/ dans votre navigateur. L'application se rechargera automatiquement si vous modifiez l'un des fichiers sources.
